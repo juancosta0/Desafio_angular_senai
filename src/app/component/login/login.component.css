@@ -8,7 +8,6 @@
 .sessao-form {
   width: 50%;
   height: 100%;
-
 }
 
 .sessao-carro img {
@@ -48,7 +47,6 @@
   font-size: 2rem;
   align-self: center;
   padding-bottom: 2rem;
-
 }
 
 /* Contêiner do Formulário */
@@ -59,7 +57,6 @@
   flex-direction: column;
   justify-content: center;
   align-self: center;
-
 }
 
 .formulario {
@@ -71,38 +68,32 @@
   gap: 1rem;
 }
 
+/* AGORA ESSA CLASSE SE APLICA A TODOS OS ITENS: INPUTS E LOGIN-AUTO */
 .sessao-form-form-div {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  position: relative;
+  left: 14px;
 }
 
 .sessao-form-form-item {
   width: 100%;
-  /* Input agora preenche o wrapper */
   height: 2rem;
   border-radius: 3px;
   border: #8d8c8c solid 2px;
   box-sizing: border-box;
-  /* ESSENCIAL: Impede que o padding quebre o layout */
-
-  /* Suas regras do ícone da ESQUERDA (continuam iguais) */
   padding-left: 40px;
   background-repeat: no-repeat;
   background-position: 10px center;
   background-size: 20px 20px;
-
 }
 
 .sessao-form-form-item:focus {
-  /* 1. Muda a cor para seu verde (Fica mais visível) */
   border-color: black;
-
-  /* 2. Deixa a borda mais grossa (como você pediu) */
   border-width: 3px;
-
-  /* 3. Remove o "brilho" padrão do navegador (muito importante) */
   outline: none;
 }
 
@@ -115,23 +106,16 @@
   padding-right: 40px;
 }
 
-
 .input-wrapper {
   position: relative;
   width: 75%;
-  /* O wrapper tem 75% de largura */
 }
 
 .icon-input-right {
   position: absolute;
   right: 12px;
-  /* Posição: 12px da borda direita */
   top: 50%;
-  /* Posição: Metade da altura */
   transform: translateY(-50%);
-  /* Ajuste fino para centralizar verticalmente */
-
-  /* Defina um tamanho e cursor */
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -154,4 +138,89 @@
 
 .icon-outside-placeholder {
   cursor: default;
+}
+
+/* --- CSS DA SEÇÃO DE LOGIN-AUTO --- */
+
+/* 1. Este é o wrapper INTERNO de 75% (como o .input-wrapper) */
+.sessao-form-form-login-auto {
+  width: 75%;
+  /* Mesma largura dos inputs para alinhar */
+  display: flex;
+  justify-content: flex-end;
+  /* Joga o conteúdo para a direita */
+  align-items: center;
+  /* (A margem 'margin-top' agora é controlada pelo 'gap' do .formulario) */
+}
+
+.login-auto-label-texto {
+  font-size: 0.9rem;
+  color: #555;
+  cursor: pointer;
+  margin-right: 8px;
+  /* Espaço entre o texto e o switch */
+}
+
+.login-auto-controles {
+  display: flex;
+  align-items: center;
+}
+
+/* 2. Estilização do Toggle Switch (Idêntico) */
+
+.login-auto-switch-input {
+  display: none;
+}
+
+.login-auto-switch-label {
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-auto-switch-label::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+
+.login-auto-switch-input:checked+.login-auto-switch-label {
+  background-color: #44A66E;
+}
+
+.login-auto-switch-input:checked+.login-auto-switch-label::after {
+  transform: translateX(20px);
+}
+
+/* 3. Estilização do Botão "Entrar" (COM A CORREÇÃO) */
+.botao-entrar {
+  width: 75%;
+  /* Mesma largura dos inputs para alinhar */
+  box-sizing: border-box;
+  /* <-- ESSA É A CORREÇÃO para o tamanho */
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6d6d6d;
+  background-color: #D3D3D3;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  /* (A margem 'margin-top' agora é controlada pelo 'gap' do .formulario) */
+  transition: background-color 0.3s ease;
+}
+
+.botao-entrar:hover {
+  background-color: #bfbebe;
 }
