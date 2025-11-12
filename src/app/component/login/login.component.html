@@ -7,35 +7,31 @@
     <section class="sessao-form-logo">
       <img src="img/ford.png" alt="">
     </section>
-    <section class="sessao-form-form">
+    <section class="sessao-form-div">
       <h1>Boas-vindas</h1>
-      <form action="">
+      <section class="sessao-form-form">
+        <form action="submit" class="formulario">
 
-        <div class="input-container">
-          <i class="fa-regular fa-user icon-esquerda"></i>
-          <input type="email" placeholder="Insira seu e-mail">
-          <i class="fa-solid fa-circle-info icon-direita-info"></i>
-        </div>
-
-        <div class="input-container">
-          <i class="fa-solid fa-lock icon-esquerda"></i>
-          <input type="password" placeholder="Insira sua senha">
-          <i class="fa-regular fa-eye-slash icon-direita-olho"></i>
-        </div>
-
-        <div class="options-container">
-          <label for="auto-login">Logar automaticamente</label>
-          <div class="toggle-switch-wrapper">
-            <input type="checkbox" id="auto-login" class="toggle-checkbox">
-            <label for="auto-login" class="toggle-label"></label>
+          <div class="sessao-form-form-div">
+            <div class="input-wrapper">
+              <input class="sessao-form-form-item-email sessao-form-form-item" type="email" id="email" name="email"
+                placeholder="Insira seu e-mail">
+            </div>
+            <img src="/icon/icon_info.svg" alt="Informação" class="icon-outside-info">
           </div>
-          <i class="fa-solid fa-circle-info icon-direita-info"></i>
-        </div>
 
-        <button type="submit" class="btn-entrar">Entrar</button>
+          <div class="sessao-form-form-div">
+            <div class="input-wrapper">
+              <input class="sessao-form-form-item-senha sessao-form-form-item" type="password" id="password"
+                name="password" placeholder="Insira sua senha">
+              <img src="/icon/icon_ocultar_senha.png" alt="ocultar senha" class="icon-input-right">
+            </div>
+            
+            <div class="icon-outside-placeholder"></div>
 
-      </form>
+          </div>
+        </form>
+      </section>
     </section>
   </div>
-
 </div>
