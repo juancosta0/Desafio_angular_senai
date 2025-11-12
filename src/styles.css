@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+/* --- INÍCIO DO CSS RESET --- */
+
+/* 1. Define o 'box-sizing' para ser mais intuitivo.
+   Agora, 'width: 100px' inclui padding e borda, não os soma. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove a margem padrão do body.
+   ESSENCIAL para layouts '100vh' como o seu. */
+body {
+  margin: 0;
+  font-family: 'Ford Antenna', sans-serif;
+
+}
+
+/* 3. Remove margens e paddings de elementos comuns.
+   Isso evita espaçamentos inesperados. */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* 4. Remove estilos de lista (bullets/números)
+   Você pode re-adicionar seletivamente se precisar. */
+ul, ol {
+  list-style: none;
+}
+
+/* 5. Faz as imagens se comportarem de forma responsiva por padrão.
+   Elas nunca vão "quebrar" o layout transbordando do seu contêiner. */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Permite que elementos de formulário herdem a fonte da família. */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Cria um contexto de 'stacking' (empilhamento) base.
+   Isso ajuda a controlar o 'z-index' mais facilmente. (Opcional, mas recomendado) */
+#root, #__next, :host {
+  isolation: isolate;
+}
+
+/* --- FIM DO CSS RESET --- */
