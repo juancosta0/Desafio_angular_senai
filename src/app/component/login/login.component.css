@@ -59,7 +59,7 @@
   flex-direction: column;
   justify-content: center;
   align-self: center;
-  
+
 }
 
 .formulario {
@@ -71,57 +71,76 @@
   gap: 1rem;
 }
 
-.sessao-form-form-div{
+.sessao-form-form-div {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 .sessao-form-form-item {
-  width: 100%; /* Input agora preenche o wrapper */
+  width: 100%;
+  /* Input agora preenche o wrapper */
   height: 2rem;
   border-radius: 3px;
   border: #8d8c8c solid 2px;
-  box-sizing: border-box; /* ESSENCIAL: Impede que o padding quebre o layout */
+  box-sizing: border-box;
+  /* ESSENCIAL: Impede que o padding quebre o layout */
 
   /* Suas regras do ícone da ESQUERDA (continuam iguais) */
-  padding-left: 40px; 
-  background-repeat: no-repeat; 
-  background-position: 10px center; 
-  background-size: 20px 20px; 
+  padding-left: 40px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 20px 20px;
 
 }
 
-.sessao-form-form-item-email{
+.sessao-form-form-item:focus {
+  /* 1. Muda a cor para seu verde (Fica mais visível) */
+  border-color: black;
+
+  /* 2. Deixa a borda mais grossa (como você pediu) */
+  border-width: 3px;
+
+  /* 3. Remove o "brilho" padrão do navegador (muito importante) */
+  outline: none;
+}
+
+.sessao-form-form-item-email {
   background-image: url(/icon/icon_user.svg);
 }
 
-.sessao-form-form-item-senha{
+.sessao-form-form-item-senha {
   background-image: url(/icon/icon_lock.svg);
-  padding-right: 40px; 
+  padding-right: 40px;
 }
 
 
 .input-wrapper {
   position: relative;
-  width: 75%; /* O wrapper tem 75% de largura */
+  width: 75%;
+  /* O wrapper tem 75% de largura */
 }
+
 .icon-input-right {
   position: absolute;
-  right: 12px; /* Posição: 12px da borda direita */
-  top: 50%;    /* Posição: Metade da altura */
-  transform: translateY(-50%); /* Ajuste fino para centralizar verticalmente */
-  
+  right: 12px;
+  /* Posição: 12px da borda direita */
+  top: 50%;
+  /* Posição: Metade da altura */
+  transform: translateY(-50%);
+  /* Ajuste fino para centralizar verticalmente */
+
   /* Defina um tamanho e cursor */
   width: 20px;
   height: 20px;
   cursor: pointer;
 }
+
 .icon-outside-info {
   width: 20px;
   height: 20px;
-  margin-left: 8px; 
+  margin-left: 8px;
   cursor: pointer;
 }
 
@@ -129,12 +148,10 @@
 .icon-outside-placeholder {
   width: 20px;
   height: 20px;
-  margin-left: 8px; 
+  margin-left: 8px;
   cursor: pointer;
 }
 
 .icon-outside-placeholder {
   cursor: default;
 }
-
-
