@@ -15,7 +15,7 @@
           <div class="sessao-form-form-div">
             <div class="input-wrapper">
               <input class="sessao-form-form-item-email sessao-form-form-item" type="email" id="email" name="email"
-                placeholder="Insira seu e-mail">
+                placeholder="Insira seu e-mail" [(ngModel)] = "nome">
             </div>
             <img src="/icon/icon_info.svg" alt="Informação" class="icon-outside-info">
           </div>
@@ -23,7 +23,7 @@
           <div class="sessao-form-form-div">
             <div class="input-wrapper">
               <input class="sessao-form-form-item-senha sessao-form-form-item" type="password" id="password"
-                name="password" placeholder="Insira sua senha">
+                name="password" placeholder="Insira sua senha" [(ngModel)] = 'password'>
               <img src="/icon/icon_ocultar_senha.png" alt="ocultar senha" class="icon-input-right">
             </div>
             <div class="icon-outside-placeholder"></div>
@@ -41,7 +41,7 @@
             <img src="/icon/icon_info.svg" alt="Informação" class="icon-outside-info">
 
           </div>
-          <button type="submit" class="botao-entrar">Entrar</button>
+          <button type="submit" class="botao-entrar" (click)="authentication()">Entrar</button>
         </form>
       </section>
     </section>
