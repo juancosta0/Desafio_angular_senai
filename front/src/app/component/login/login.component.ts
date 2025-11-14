@@ -26,8 +26,7 @@ export class LoginComponent {
       (this.nome, this.password!).subscribe({
         next: (user: Usuario) => {
           if (user.nome === this.nome) {
-            //this.router.navigate(['/home']);
-            alert('Deu bom porra')
+            this.router.navigate(['/home']);
             console.log(user.id, user.nome, user.email);
           }
         },

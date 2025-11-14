@@ -1,0 +1,30 @@
+.principal{
+    background-image: url('../../../../public/img/ranger.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.principal-agrupamento{
+    height: 54%;
+    width: 35%;
+    border: 2px solid black;
+    background-color: rgba(248, 244, 244, 0.87);
+}
+
+.principal-agrupamento-topo{
+    border-bottom: 1px solid black;
+    padding: 2%;
+}
+.principal-agrupamento-meio{
+    padding-top: 3%;
+    padding-left: 3%;
+}
+.principal-agrupamento-meio H2{
+    color: rgba(0, 162, 255, 0.986);
+}
