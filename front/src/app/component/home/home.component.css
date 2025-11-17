@@ -28,3 +28,103 @@
 .principal-agrupamento-meio H2{
     color: rgba(0, 162, 255, 0.986);
 }
+
+
+
+
+
+/* 2. O Container do Menu */
+.menu-container {
+    position: relative;
+}
+
+/* 3. O Checkbox (O segredo do funcionamento) */
+/* Escondemos o checkbox visualmente, mas ele continua funcional */
+#menu-toggle {
+    display: none;
+}
+
+/* 4. O Ícone Hamburguer (Label) */
+.menu-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2; /* Fica acima do menu */
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* As 3 linhas do hamburguer */
+.menu-button span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 5. A Caixa do Menu (Links) */
+.menu-items {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px; /* Largura do menu */
+    height: 100vh;
+    background-color: #2c3e50;
+    padding-top: 80px; /* Espaço para não cobrir o botão X */
+    
+    /* ANIMAÇÃO: Começa fora da tela (esquerda) */
+    transform: translateX(-150%); 
+    transition: transform 0.4s ease-in-out;
+    
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+}
+
+.menu-items a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 18px;
+    padding: 15px 30px;
+    border-bottom: 1px solid #34495e;
+    transition: background 0.2s;
+}
+
+.menu-items a:hover {
+    background-color: #34495e;
+    padding-left: 40px; /* Efeitozinho de movimento */
+}
+
+/* 6. A Mágica da Animação (Quando o checkbox está marcado) */
+
+/* Traz o menu para a tela */
+#menu-toggle:checked ~ .menu-items {
+    transform: translateX(0);
+}
+
+/* Transforma o ícone hamburguer em um X */
+#menu-toggle:checked ~ .menu-button span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 8px);
+    background-color: #ecf0f1; /* Muda cor para branco */
+}
+
+#menu-toggle:checked ~ .menu-button span:nth-child(2) {
+    opacity: 0; /* Esconde a linha do meio */
+}
+
+#menu-toggle:checked ~ .menu-button span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -8px);
+    background-color: #ecf0f1;
+}
+
+/* Conteúdo de exemplo */
+.conteudo {
+    margin-left: 80px;
+    padding: 50px;
+}
