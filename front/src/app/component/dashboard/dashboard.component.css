@@ -1,0 +1,25 @@
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.titulo{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cards{
+    height: 250px;
+    width: 250px;
+    border: 2px solid black;
+}
