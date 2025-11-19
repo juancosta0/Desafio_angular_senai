@@ -1,11 +1,70 @@
 <body>
-    <div class="titulo"><h1>Dashboard FORD</h1></div>
-    <div class="card">
-        <div class="cards"><div class="cards-individual"><h2>Veículo</h2></div></div>
-        <div class="cards"><div class="cards-individual"><h2>Total de veículo</h2></div></div>
-        <div class="cards"><div class="cards-individual"><h2>Conectados</h2></div></div>
-        <div class="cards"><div class="cards-individual"><h2>Update Software</h2></div></div>
+    <div class="titulo">
+        <h1>Dashboard FORD</h1>
     </div>
+
+    <div class="card">
+        <div class="cards cards-carro">
+            <div class="cards-individual">
+                <h2>Veículo</h2>
+            </div>
+            <div class="card-veiculos">
+                <select name="carros" id="carros">
+                    <option value="Ranger">Ranger</option>
+                    <option value="Mustang">Mustang</option>
+                    <option value="Territory">Territory</option>
+                    <option value="Bronco-Sport">Bronco Sport</option>
+                </select>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="cards-individual">
+                <h2>Total de veículo</h2>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="cards-individual">
+                <h2>Conectados</h2>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="cards-individual">
+                <h2>Update Software</h2>
+            </div>
+        </div>
+    </div>
+
     <div class="imagem"></div>
-    <div class="tabela"></div>
+
+    <div class="tabela">
+        <table>
+            <thead>
+                <tr>
+                    <th>Código - Vin</th>
+                    <th>Odômetro</th>
+                    <th>Nível de Combustível</th>
+                    <th>Status</th>
+                    <th>Lat.</th>
+                    <th>Long.</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="vin-box">2FRMCUHP53YK63NNHD22455</span>
+                    </td>
+                    <td>**50000 Km**</td>
+                    <td>**90 %**</td>
+                    <td>**on**</td>
+                    <td>**-12.2322**</td>
+                    <td>**-35.2314**</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="separator-bar"></div>
+
+
 </body>
