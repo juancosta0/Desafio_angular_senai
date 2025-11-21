@@ -26,6 +26,7 @@ export class LoginComponent {
       (this.nome, this.password!).subscribe({
         next: (user: Usuario) => {
           if (user.nome === this.nome) {
+            localStorage.setItem('usuario', JSON.stringify(user));
             this.router.navigate(['/home']);
             console.log(user.id, user.nome, user.email);
           }

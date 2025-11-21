@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  constructor(private router: Router) {}
 
+  logout(): void {
+    localStorage.removeItem('usuario');
+    this.router.navigate(['/login']);
+  }
 }

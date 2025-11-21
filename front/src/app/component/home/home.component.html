@@ -1,7 +1,7 @@
 <main>
     <nav class="menu-container">
         <input type="checkbox" id="menu-toggle">
-        
+
         <label for="menu-toggle" class="menu-button">
             <span></span>
             <span></span>
@@ -12,6 +12,10 @@
             <a href="#">Home</a>
             <a routerLink="/dashboard">Dashbord</a>
         </div>
+
+        <button class="logout-btn" (click)="logout()" title="Logout">
+            <img src="public/icon/icon_lock.svg" alt="Logout">
+        </button>
     </nav>
     <body class="principal">
     

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { VeiculoService } from '../../services/veiculo.service';
 import { Veiculo } from '../../models/veiculo.model';
 import { InfoVeiculo } from '../../models/InfoVeiculo.model';
@@ -24,10 +25,15 @@ export class DashboardComponent implements OnInit {
     'Bronco Sport': ['2FRHDUYS2Y63NHD22654']
   };
 
-  constructor(private veiculoService: VeiculoService) {}
+  constructor(private veiculoService: VeiculoService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadVehicles();
+  }
+
+  logout(): void {
+    localStorage.removeItem('usuario');
+    this.router.navigate(['/login']);
   }
 
   loadVehicles(): void {
