@@ -1,7 +1,7 @@
 <body>
     <div class="logout-container">
         <button class="logout-btn" (click)="logout()" title="Logout">
-            <img src="public/icon/icon_lock.svg" alt="Logout">
+            <img src="icon/icon_user.svg" alt="Logout">
         </button>
     </div>
 
@@ -30,7 +30,7 @@
             <div class="conteudo-card">
               <h3>{{ selectedVehicle?.volumetotal || 0 }}</h3>
             </div>
-            <span>Unid.</span>
+            <span class="unid">Unid.</span>
 
         </div>
         <div class="cards">
@@ -40,7 +40,7 @@
             <div class="conteudo-card">
               <h3>{{ selectedVehicle?.connected || 0 }}</h3>
             </div>
-            <span>Unid.</span>
+            <span class="unid">Unid.</span>
 
         </div>
         <div class="cards">
@@ -50,7 +50,7 @@
             <div class="conteudo-card">
               <h3>{{ selectedVehicle?.softwareUpdates || 0 }}</h3>
             </div>
-            <span>Unid.</span>
+            <span class="unid">Unid.</span>
         </div>
     </div>
 

@@ -124,8 +124,12 @@ body {
     color: #004d99;
 }
 
-span{
+.unid{
     font-size: 1.5rem;
+    position: relative;
+    bottom: 20px;
+    left: 70px;
+
 }
 
 .imagem {
