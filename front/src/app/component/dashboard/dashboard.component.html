@@ -9,11 +9,11 @@
                 <h2>Veículo</h2>
             </div>
             <div class="card-veiculos">
-                <select name="carros" id="carros">
+                <select name="carros" id="carros" [(ngModel)]="selectedVehicleName" (change)="onVehicleChange()">
                     <option value="Ranger">Ranger</option>
                     <option value="Mustang">Mustang</option>
                     <option value="Territory">Territory</option>
-                    <option value="Bronco-Sport">Bronco Sport</option>
+                    <option value="Bronco Sport">Bronco Sport</option>
                 </select>
             </div>
         </div>
@@ -22,7 +22,7 @@
                 <h2>Total de veículo</h2>
             </div>
             <div class="conteudo-card">
-              <h3></h3>
+              <h3>{{ selectedVehicle?.volumetotal || 0 }}</h3>
             </div>
             <span>Unid.</span>
 
@@ -32,7 +32,7 @@
                 <h2>Conectados</h2>
             </div>
             <div class="conteudo-card">
-              <h3></h3>
+              <h3>{{ selectedVehicle?.connected || 0 }}</h3>
             </div>
             <span>Unid.</span>
 
@@ -42,13 +42,15 @@
                 <h2>Update Software</h2>
             </div>
             <div class="conteudo-card">
-              <h3></h3>
+              <h3>{{ selectedVehicle?.softwareUpdates || 0 }}</h3>
             </div>
             <span>Unid.</span>
         </div>
     </div>
 
-    <div class="imagem"></div>
+    <div class="imagem" *ngIf="selectedVehicle">
+        <img [src]="getVehicleImage()" [alt]="selectedVehicle.vehicle" style="max-width: 100%; height: auto;">
+    </div>
 
     <div class="tabela">
         <table>
@@ -64,17 +66,16 @@
             </thead>
 
             <tbody>
-                <tr>
+                <tr *ngFor="let data of vehicleData">
                     <td>
-                        <span class="vin-box">2FRMCUHP53YK63NNHD22455</span>
+                        <span class="vin-box">VIN-{{ data.id }}</span>
                     </td>
-                    <td>**50000 Km**</td>
-                    <td>**90 %**</td>
-                    <td>**on**</td>
-                    <td>**-12.2322**</td>
-                    <td>**-35.2314**</td>
+                    <td>{{ data.odometro }} Km</td>
+                    <td>{{ data.nivelCombustivel }} %</td>
+                    <td>{{ data.status }}</td>
+                    <td>{{ data.lat }}</td>
+                    <td>{{ data.long }}</td>
                 </tr>
-
             </tbody>
         </table>
     </div>

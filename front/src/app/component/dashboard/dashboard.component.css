@@ -83,8 +83,29 @@ body {
     height: 50px;
 }
 
+.conteudo-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.conteudo-card h3 {
+    margin: 0;
+    font-size: 2rem;
+    color: #004d99;
+}
+
 span{
     font-size: 1.5rem;
+}
+
+.imagem {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
 }
 
 .tabela {
