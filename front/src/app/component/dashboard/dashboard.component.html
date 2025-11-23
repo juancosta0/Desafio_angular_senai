@@ -1,91 +1,92 @@
 <body>
-    <div class="logout-container">
-        <button class="logout-btn" (click)="logout()" title="Logout">
-            <img src="icon/icon_user.svg" alt="Logout">
-        </button>
+  <div class="logout-container">
+    <button class="logout-btn" (click)="logout()" title="Logout">
+      <img src="icon/icon_user.svg" alt="Logout">
+    </button>
+  </div>
+
+  <div class="titulo">
+    <h1>Dashboard FORD</h1>
+  </div>
+
+  <div class="card">
+    <div class="cards cards-carro">
+      <div class="cards-individual card-topo">
+        <h2>Veículo</h2>
+      </div>
+      <div class="card-veiculos">
+        <select name="carros" id="carros" [(ngModel)]="selectedVehicleName" (change)="onVehicleChange()">
+          <option value="Ranger">Ranger</option>
+          <option value="Mustang">Mustang</option>
+          <option value="Territory">Territory</option>
+          <option value="Bronco Sport">Bronco Sport</option>
+        </select>
+      </div>
     </div>
+    <div class="cards">
+      <div class="cards-individual card-topo">
+        <h2>Total de veículo</h2>
+      </div>
+      <div class="conteudo-card">
+        <h3>{{ selectedVehicle?.volumetotal || 0 }}</h3>
+      </div>
+      <span class="unid">Unid.</span>
 
-    <div class="titulo">
-        <h1>Dashboard FORD</h1>
     </div>
+    <div class="cards">
+      <div class="cards-individual card-topo">
+        <h2>Conectados</h2>
+      </div>
+      <div class="conteudo-card">
+        <h3>{{ selectedVehicle?.connected || 0 }}</h3>
+      </div>
+      <span class="unid">Unid.</span>
 
-    <div class="card">
-        <div class="cards cards-carro">
-            <div class="cards-individual card-topo">
-                <h2>Veículo</h2>
-            </div>
-            <div class="card-veiculos">
-                <select name="carros" id="carros" [(ngModel)]="selectedVehicleName" (change)="onVehicleChange()">
-                    <option value="Ranger">Ranger</option>
-                    <option value="Mustang">Mustang</option>
-                    <option value="Territory">Territory</option>
-                    <option value="Bronco Sport">Bronco Sport</option>
-                </select>
-            </div>
-        </div>
-        <div class="cards">
-            <div class="cards-individual card-topo">
-                <h2>Total de veículo</h2>
-            </div>
-            <div class="conteudo-card">
-              <h3>{{ selectedVehicle?.volumetotal || 0 }}</h3>
-            </div>
-            <span class="unid">Unid.</span>
-
-        </div>
-        <div class="cards">
-            <div class="cards-individual card-topo">
-                <h2>Conectados</h2>
-            </div>
-            <div class="conteudo-card">
-              <h3>{{ selectedVehicle?.connected || 0 }}</h3>
-            </div>
-            <span class="unid">Unid.</span>
-
-        </div>
-        <div class="cards">
-            <div class="cards-individual card-topo">
-                <h2>Update Software</h2>
-            </div>
-            <div class="conteudo-card">
-              <h3>{{ selectedVehicle?.softwareUpdates || 0 }}</h3>
-            </div>
-            <span class="unid">Unid.</span>
-        </div>
     </div>
-
-    <div class="imagem" *ngIf="selectedVehicle">
-        <img [src]="getVehicleImage()" [alt]="selectedVehicle.vehicle" style="max-width: 100%; height: auto;">
+    <div class="cards">
+      <div class="cards-individual card-topo">
+        <h2>Update Software</h2>
+      </div>
+      <div class="conteudo-card">
+        <h3>{{ selectedVehicle?.softwareUpdates || 0 }}</h3>
+      </div>
+      <span class="unid">Unid.</span>
     </div>
+  </div>
 
-    <div class="tabela">
-        <table>
-            <thead>
-                <tr>
-                    <th>Código - Vin</th>
-                    <th>Odômetro</th>
-                    <th>Nível de Combustível</th>
-                    <th>Status</th>
-                    <th>Lat.</th>
-                    <th>Long.</th>
-                </tr>
-            </thead>
+  <div class="imagem" *ngIf="selectedVehicle">
+    <img [src]="getVehicleImage()" [alt]="selectedVehicle.vehicle" style="max-width: 100%; height: auto;">
+  </div>
 
-            <tbody>
-                <tr *ngFor="let data of vehicleData">
-                    <td>
-                        <span class="vin-box">VIN-{{ data.id }}</span>
-                    </td>
-                    <td>{{ data.odometro }} Km</td>
-                    <td>{{ data.nivelCombustivel }} %</td>
-                    <td>{{ data.status }}</td>
-                    <td>{{ data.lat }}</td>
-                    <td>{{ data.long }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="separator-bar"></div>
+  <div class="tabela">
+    <table>
+      <thead>
+        <tr>
+          <th>Código - Vin</th>
+          <th>Odômetro</th>
+          <th>Nível de Combustível</th>
+          <th>Status</th>
+          <th>Lat.</th>
+          <th>Long.</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>
+            <input type="text" [(ngModel)]="codVinBusca" (input)="buscarVeiculo()" placeholder="Digite o VIN..."
+              class="input-vin">
+          </td>
+          <td>{{ veiculoEncontrado?.odometro }} <span *ngIf="veiculoEncontrado">Km</span></td>
+          <td>{{ veiculoEncontrado?.nivelCombustivel }} <span *ngIf="veiculoEncontrado">%</span></td>
+          <td>{{ veiculoEncontrado?.status }}</td>
+          <td>{{ veiculoEncontrado?.lat }}</td>
+          <td>{{ veiculoEncontrado?.long }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="separator-bar"></div>
 
 
 </body>

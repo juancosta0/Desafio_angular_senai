@@ -106,7 +106,7 @@ body {
     align-items: center;
 }
 
-.card-topo{
+.card-topo {
     background: #F7F7F7;
     height: 50px;
 }
@@ -124,12 +124,11 @@ body {
     color: #004d99;
 }
 
-.unid{
+.unid {
     font-size: 1.5rem;
     position: relative;
     bottom: 20px;
     left: 70px;
-
 }
 
 .imagem {
@@ -140,10 +139,11 @@ body {
     padding: 20px 0;
 }
 
+/* --- ESTILOS DA TABELA --- */
+
 .tabela {
     width: 100%;
     display: block;
-
     position: absolute;
     bottom: 15px;
     left: 0;
@@ -155,7 +155,6 @@ table {
     text-align: center;
 }
 
-
 thead {
     background-color: #004d99;
     color: white;
@@ -164,29 +163,39 @@ thead {
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
+    vertical-align: middle; /* Centraliza verticalmente */
 }
 
-
+/* Garante altura mínima para a linha não "pular" quando vazia */
 tbody tr {
     background-color: #f2f2f2;
+    height: 50px;
 }
 
-
-.vin-box {
-    border: 1px solid #c7c7c7;
-    padding: 2px 4px;
-    display: inline-block;
-    background-color: #fff;
-    color: #888;
+/* ESTILO DO INPUT DE BUSCA (DENTRO DA CÉLULA) */
+.input-vin {
+    width: 100%;
+    max-width: 200px; /* Limita a largura para ficar elegante */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Impede que o padding estoure a tabela */
+    font-size: 14px;
+    text-align: center;
 }
 
+.input-vin:focus {
+    outline: none;
+    border-color: #003478;
+    background-color: #ffffff;
+    box-shadow: 0 0 4px rgba(0, 52, 120, 0.3);
+}
 
+/* Barra azul no final da página */
 .separator-bar {
     width: 100%;
     background-color: #004d99;
     height: 15px;
-
-
     position: absolute;
     bottom: 0;
     left: 0;
