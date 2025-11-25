@@ -9,33 +9,7 @@ body {
     position: relative;
 }
 
-.logout-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 10;
-}
 
-.logout-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-}
-
-.logout-btn:hover {
-    background-color: rgba(200, 0, 0, 0.1);
-}
-
-.logout-btn img {
-    width: 24px;
-    height: 24px;
-}
 
 .titulo {
     width: 100%;
@@ -160,10 +134,12 @@ thead {
     color: white;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #ddd;
     padding: 8px;
-    vertical-align: middle; /* Centraliza verticalmente */
+    vertical-align: middle;
+    /* Centraliza verticalmente */
 }
 
 /* Garante altura mínima para a linha não "pular" quando vazia */
@@ -175,11 +151,13 @@ tbody tr {
 /* ESTILO DO INPUT DE BUSCA (DENTRO DA CÉLULA) */
 .input-vin {
     width: 100%;
-    max-width: 200px; /* Limita a largura para ficar elegante */
+    max-width: 200px;
+    /* Limita a largura para ficar elegante */
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Impede que o padding estoure a tabela */
+    box-sizing: border-box;
+    /* Impede que o padding estoure a tabela */
     font-size: 14px;
     text-align: center;
 }

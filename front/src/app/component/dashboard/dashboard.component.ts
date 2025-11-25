@@ -5,10 +5,11 @@ import { Router } from '@angular/router';
 import { VeiculoService } from '../../services/veiculo.service';
 import { Veiculo } from '../../models/veiculo.model';
 import { InfoVeiculo } from '../../models/InfoVeiculo.model';
+import { SideMenuComponent } from '../side-menu/side-menu.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, SideMenuComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -32,17 +33,14 @@ export class DashboardComponent implements OnInit {
     'Bronco Sport': ['2FRHDUYS2Y63NHD22654']
   };
 
-  constructor(private veiculoService: VeiculoService, private router: Router) {}
+  constructor(private veiculoService: VeiculoService, private router: Router) { }
 
   ngOnInit(): void {
     this.loadVehicles();
     this.loadAllVehicleData(); // Carrega TUDO ao iniciar
   }
 
-  logout(): void {
-    localStorage.removeItem('usuario');
-    this.router.navigate(['/login']);
-  }
+
 
   loadVehicles(): void {
     this.veiculoService.getVehicles().subscribe({
